@@ -10,13 +10,13 @@
 // http://www.thingiverse.com/sveltema
 
 // Change this number to vary the overall gear diameter
-NUMBER_OF_TEETH = 100; // [10:1:260]
+NUMBER_OF_TEETH = 105; // [10:1:260]
 // Hole diameter. Change by 0.5mm increments and test
-BORE_DIAMETER = 62.5;  // [3:.1:200]
-BORE_DIAMETER_2 = 63.8;  // [3:.1:200]
+BORE_DIAMETER = 69.8;  // [3:.1:200]
+BORE_DIAMETER_2 = 69.8;  // [3:.1:200]
 BORE_N = 101;
 // Thickness of the gear
-GEAR_THICKNESS = 10;   // [1:1:60]
+GEAR_THICKNESS = 8;   // [1:1:60]
 
 
 // Simple Camera Lens Gear:
@@ -252,22 +252,15 @@ gear (module_number=0.8, // Camera lens gears are Mod 0.8. Don't change this num
     GEAR_THICKNESS = GEAR_THICKNESS // Thickness of the part which grips the lens barrel
     );
         
+            /*
         for(i=[0:BORE_N]) {
        rotate([0,0,i*360/BORE_N])
-       translate([BORE_DIAMETER_2/2,0,0])
+       translate([BORE_DIAMETER/2,0,0])
        rotate([0,0,60])
        cylinder(d=1,h=GEAR_THICKNESS,$fn=6);
    }
+            */
    }
-        
-   translate([-0.5,0,0])
-        cube([1.0,100,15]);
-   
-   translate([-5,BORE_DIAMETER_2/2+3.5])
-   cylinder(d=3,h=15,$fn=32);
-   
-   translate([5,BORE_DIAMETER_2/2+3.5])
-   cylinder(d=3,h=15,$fn=32);
    
         
     }
